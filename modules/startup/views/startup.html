@@ -1,0 +1,19 @@
+<!-- Startup <a href="#" ui-sref="match"> go for a match </a>
+ -->
+<div class="row">
+    <div class="col-sm-18 col-md-12">
+        <div class="account-wall">
+            <img class="profile-img" src="assets/img/photo-login.png" alt="">
+            <form class="form-signin">
+                <input type="text" class="form-control" name="username" placeholder="Joueur1" ng-model="match.playerName1" required autofocus>
+                <input type="text" class="form-control" name="password" placeholder="Joueur2" ng-model="match.playerName2" required>
+                <input type="number" class="form-control" name="password" placeholder="Nombre de Parties" ng-model="match.numberOfRounds" required>
+
+                <button ng-click="startMatch(match.playerName1, match.playerName2, match.numberOfRounds)" class="btn btn-lg btn-default btn-block">
+                
+             <!--    <button ng-click="startMatch()" class="btn btn-lg btn-default btn-block"> -->
+                    <i class="fa fa-sign-in"></i> Démarrer le match</button>
+            </form>
+        </div>
+    </div>
+</div>

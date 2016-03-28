@@ -1,0 +1,46 @@
+<div class="container">
+    <!-- progress bar-->
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Match fini,  <b class="pull-right">{{winner.getName()}} est le vainqueur</b></h3>
+        </div>
+    </div>
+    <!-- results-->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">{{player1.getName()}} 
+                    <b class="pull-right" ng-if="currentPlayer.getName()==player1.getName()"> C'est mon tour!</b>
+                </div>
+                <div class="panel-body">
+                    <b>Score : </b> {{player1.getNumberOfWins()}} <br/>
+                    Parties joués  {{rounds.length}} <br/>
+                     {{player1.getNumberOfTotalHits()}} Nombre de coups en Total <br/>
+                     <b>Temps consommé: </b>{{player1.getreflexTime()}} secondes 
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-success">
+                <div class="panel-heading">{{player2.getName()}} 
+                    <b class="pull-right" ng-if="currentPlayer.getName()==player2.getName()"> C'est mon tour!</b>
+                </div>
+                <div class="panel-body">
+                    <b>Score : </b> {{player2.getNumberOfWins()}} <br/>
+                     Parties joués {{rounds.length}} <br/>
+                     {{player2.getNumberOfTotalHits()}} Nombre de coups en Total <br/>
+                     <b>Temps consommé: </b>{{player2.getreflexTime()}} secondes
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="row">
+    <div class="col-md-12"> <a class="btn btn-success" href="#" ng-click="reStartMatch()" role="button">Refaire le match</a>
+
+    </div>
+</div>
+
+
+</div>

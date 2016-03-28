@@ -1,0 +1,70 @@
+<div class="container">
+    <!-- progress bar-->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="{{100*(roundCounter+1)/rounds.length}}" aria-valuemin="0" aria-valuemax="100" ng-style="{width : ( 100*(roundCounter+1)/rounds.length + '%' ) }">
+                   {{ 100*(roundCounter+1)/rounds.length + '%' }}  parties joués
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- results-->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">{{player1.getName()}} 
+                    <b class="pull-right" ng-if="currentPlayer.getName()==player1.getName()"> C'est mon tour!</b>
+                </div>
+                <div class="panel-body">
+                    <b>Score : </b> {{player1.getNumberOfWins()}} <br/>
+                    <b> {{roundCounter+1}}</b> Parties joués / {{rounds.length}} en Total <br/>
+                    <b></b> {{numberOfHits.of[player1.getName()]}} Nombre de coups partie courante  / {{player1.getNumberOfTotalHits()}} Nombre de coups en Total <br/>
+                     <b>Temps consommé: </b>{{player1.getreflexTime()}} secondes 
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-success">
+                <div class="panel-heading">{{player2.getName()}} 
+                    <b class="pull-right" ng-if="currentPlayer.getName()==player2.getName()"> C'est mon tour!</b>
+                </div>
+                <div class="panel-body">
+                    <b>Score : </b> {{player2.getNumberOfWins()}} <br/>
+                    <b> {{roundCounter+1}}</b> Parties joués / {{rounds.length}} en Total <br/>
+                    <b></b> {{numberOfHits.of[player2.getName()]}} Nombre de coups partie courante  / {{player2.getNumberOfTotalHits()}} Nombre de coups en Total <br/>
+                     <b>Temps consommé: </b>{{player2.getreflexTime()}} secondes
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+ <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6">
+            <table>
+               		<tr>
+                        <th ng-repeat="col in getNumber(grid.cols) track by $index" ng-click="insertDisc($index)"> 
+                        	<div class="disc" ng-class="{red:isCurrentColor('red'), yellow: isCurrentColor('yellow'), empty : isCurrentColor('empty')}"></div>
+                    	</th>
+                    </tr>
+            		<tr ng-repeat="row in getNumber(grid.rows) track by $index">
+                        <td ng-repeat="col in getNumber(grid.cols) track by $index" >
+                        	<div class="disc"  ng-class="{red: isCellColor($parent.$index, $index,'red'), yellow: isCellColor($parent.$index, $index,'yellow'), empty : isCellColor($parent.$index, $index,'empty')}"></div>
+                    	</td>
+                    </tr>
+            <table>
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+
+</div>
+<!-- 
+Match  {{rounds}}<a href="#" ui-sref="result"> result ? </a>
+
+{{players}}
+ -->
