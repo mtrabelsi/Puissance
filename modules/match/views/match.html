@@ -48,7 +48,7 @@
             <table>
                		<tr>
                         <th ng-repeat="col in getNumber(grid.cols) track by $index" ng-click="insertDisc($index)"> 
-                        	<div class="disc" ng-class="{red:isCurrentColor('red'), yellow: isCurrentColor('yellow'), empty : isCurrentColor('empty')}"></div>
+                        	<div class="disc pow-pulse-grow" ng-class="{red:isCurrentColor('red'), yellow: isCurrentColor('yellow'), empty : isCurrentColor('empty')}"></div>
                     	</th>
                     </tr>
             		<tr ng-repeat="row in getNumber(grid.rows) track by $index">

@@ -8,4 +8,50 @@ table {
 
 th {
 	background-color: white;
+	padding-left: 2.5%;
+    padding-bottom: 1%
+}
+
+/*table th .disc:hover{
+    background: #f00;
+}
+*/
+
+
+/* Pulse Grow */
+@-webkit-keyframes pow-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+@keyframes pow-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+.pow-pulse-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+.pow-pulse-grow:hover, .pow-pulse-grow:focus, .pow-pulse-grow:active {
+  -webkit-animation-name: pow-pulse-grow;
+  animation-name: pow-pulse-grow;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
 }
