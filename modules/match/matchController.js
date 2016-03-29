@@ -38,7 +38,7 @@ function matchController(MatchService, $scope, GRID_SIZE, COLOR_MAP, GridService
             GridService.insertDisc(returnVal.row, returnVal.col, $scope.currentPlayerId);
             var tmp = GridService.getGrid();
             if (GridService.isVictory(tmp, returnVal.row, returnVal.col, $scope.currentPlayerId)) {
-                var winPlayer = $scope.player1 == $scope.currentPlayerId ? $scope.player1 : $scope.player2;
+                var winPlayer = $scope.player1.getId() == $scope.currentPlayerId ? $scope.player1 : $scope.player2;
                 currentRound.setWinner(winPlayer);
                 if(winPlayer!=null)
                 alert(winPlayer.getName() + " gagne!, partie suivante?");
