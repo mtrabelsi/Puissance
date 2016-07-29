@@ -1,4 +1,4 @@
-# <Puissance-4> game using  **Angular.js** and **CSS3** only!
+# Puissance-4 game using  **Angular.js** and **CSS3** only!
 
 # Screenshots
 ![Screen1](pow1.png?raw=true "Screen1")
